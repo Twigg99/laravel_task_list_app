@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 :root {
-
-  font-family: 'Instrument Serif', serif, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Instrument Serif", serif, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -18,7 +19,7 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #000000;
   text-decoration: inherit;
 }
 a:hover {
@@ -39,7 +40,7 @@ h1 {
 }
 
 h2 {
-  font-family: 'Instrument Serif', serif;
+  font-family: "Instrument Serif", serif;
   font-size: 36px;
   color: #000000;
 }
@@ -74,14 +75,112 @@ button:focus-visible {
   text-align: center;
 }
 
+/* sidebar styling */
+
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background: #f0fcff;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0px 3px 6px #00000029;
+  border: 1px solid #f0fcff;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  color: #000000;
+}
+nav ul li {
+  /* margin: 10px 0px; */
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.active {
+  background-color: #df57bc; /* Highlighted Section */
+  color: white;
+  border-radius: 8px;
+}
+
+.organiserSeparator {
+  border: 1px solid #df57bc;
+}
+
+.sidebar nav ul li:hover {
+  background: #f6828c; /* Light pink hover effect */
+  transition: 0.3s ease-in-out;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.addSectionButton {
+  max-width: 230px;
+  width: 100%;
+  max-height: 50px;
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
+  color: #a03e99;
+  background-color: #f0fcff;
+  border: 2px solid #a03e99;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.navigationList {
+  display: flex;
+  flex-direction: column;
+}
+
+.chevron-icon {
+  position: absolute;
+  top: 40px;
+  right: -15px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  z-index: 10;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.chevron-icon:hover {
+  color: #f6828c;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
-  a:hover {
-    color: #747bff;
-  }
+  /* a:hover { */
+  /* color: #747bff; */
+  /* } */
   button {
     background-color: #f9f9f9;
   }
