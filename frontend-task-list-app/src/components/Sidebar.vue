@@ -1,66 +1,31 @@
 <template>
-  <aside class="sidebar">
+  <aside class="sidebar"  :class="['sidebar', { collapsed: isCollapsed }]">
+    <ChevronLeftCircle class="chevron-icon" @click="collapseSidebar" :class="['chevron-icon', { rotated: isCollapsed }]"/>
     <nav>
       <h2>Organiser</h2>
       <hr class="organiserSeparator">
    
-        <ChevronLeftCircle class="chevron-icon" />
       
-      <ul>
+      <ul class="navigationList">
         <li><router-link to="/">All Tasks</router-link></li>
+        <li><router-link to="/holiday">Holidays</router-link></li>
       </ul>
+      <button class="addSectionButton"><CirclePlus></CirclePlus><span v-if="!isCollapsed">Add New Section</span></button>
     </nav>
   </aside>
 </template>
 <script setup>
-import { Home, List, Plus, ChevronLeftCircle } from "lucide-vue-next";
+import { Home, List, Plus, ChevronLeftCircle, CirclePlus } from "lucide-vue-next";
+import { ref } from "vue";
+
+const isCollapsed = ref(false);
+
+
+const collapseSidebar = () => {
+  isCollapsed.value = !isCollapsed.value;
+};
+
+
 </script>
 <style>
-.sidebar {
-  width: 250px;
-  height: 100%;
-  background: #f0fcff;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  width: 200px;
-  display: flex;
-  justify-content: center;
-}
-nav ul li {
-  margin-bottom: 10px;
-}
-.active {
-  background-color: #df57bc; /* Highlighted Section */
-  color: white;
-  border-radius: 8px;
-}
-
-.organiserSeparator {
-  border: 1px solid #df57bc;
-}
-
-.sidebar a:hover {
-  background: #f6828c; /* Light pink hover effect */
-  transition: 0.3s ease-in-out;
-}
-
-.chevron-icon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  color: #000000; /* Matches your theme */
-  transition: transform 0.3s ease-in-out;
-}
-
-.chevron-icon:hover {
-  color: #f6828c; /* Lighter hover effect */
-  transform: scale(1.1);
-}
 </style>
