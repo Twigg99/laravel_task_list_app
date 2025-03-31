@@ -130,6 +130,11 @@ nav ul li {
   transition: 0.3s ease-in-out;
 }
 
+.addSectionButton:hover {
+  transition: 0.3s ease-in-out;
+  border: 2px solid #f6828c;
+}
+
 .sidebar.collapsed {
   width: 80px;
 }
