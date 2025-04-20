@@ -3,7 +3,8 @@
     <ChevronLeftCircle class="chevron-icon" @click="collapseSidebar" :class="['chevron-icon', { rotated: isCollapsed }]"/>
     <nav>
       <h2 v-if="!isCollapsed">Organiser</h2>
-      <hr v-if="!isCollapsed"  class="organiserSeparator">
+      <img v-else src="/public/Images/binder.png" style="margin: 10px 0px;">
+      <hr   class="organiserSeparator">
    
       
       <ul class="navigationList">

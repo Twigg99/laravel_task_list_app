@@ -126,6 +126,10 @@ nav ul li {
   width: 100%;
 }
 
+.sidebar.collapsed .iconSidebar {
+  justify-content: center;
+}
+
 .sidebar nav ul li:hover {
   background: #f6828c; /* Light pink hover effect */
   transition: 0.3s ease-in-out;
@@ -138,6 +142,7 @@ nav ul li {
 
 .sidebar.collapsed {
   width: 80px;
+  transition: 0.3s ease-in-out;
 }
 
 .addSectionButton {
