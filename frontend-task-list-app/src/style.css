@@ -123,6 +123,7 @@ nav ul li {
 
 .organiserSeparator {
   border: 1px solid #df57bc;
+  width: 100%;
 }
 
 .sidebar nav ul li:hover {
